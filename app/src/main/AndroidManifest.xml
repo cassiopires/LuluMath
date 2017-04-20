@@ -15,7 +15,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Somar"></activity>
+        <activity android:name=".Soma"></activity>
     </application>
 
 </manifest>

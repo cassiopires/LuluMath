@@ -7,22 +7,114 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.fakedomain.admin.lulumath.MainActivity">
+    tools:context="com.fakedomain.admin.lulumath.MainActivity"
+    android:background="#7e57c2">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+"
-        android:id="@+id/btnSomar"
-        android:layout_marginLeft="52dp"
-        android:layout_marginStart="52dp"
-        android:background="#F00"
-        android:textColor="@color/accent_material_light"
-        android:textSize="@dimen/texto_botao"
-        android:width="@dimen/largura_botao"
-        android:height="@dimen/altura_botao"
-        android:layout_marginTop="136dp"
-        android:layout_alignParentTop="true"
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/imageViewSoma"
+        android:background="@drawable/soma"
+        android:clickable="false"
+        android:layout_marginBottom="35dp"
+        android:layout_above="@+id/imageViewSubtracao"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageViewSubtracao"
+        android:background="@drawable/subtracao"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/imageViewMultiplicacao"
+        android:background="@drawable/multiplicacao"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/imageViewSubtracao"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/imageViewDivisao"
+        android:background="@drawable/divisao"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Soma"
+        android:id="@+id/textViewSoma"
+        android:textSize="30sp"
+        android:layout_alignBottom="@+id/imageViewSoma"
+        android:layout_alignLeft="@+id/textViewSubtracao"
+        android:layout_alignStart="@+id/textViewSubtracao"
+        android:layout_marginBottom="25dp"
+        android:textColor="#fff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Subtração"
+        android:id="@+id/textViewSubtracao"
+        android:textSize="30sp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/imageViewSubtracao"
+        android:layout_toEndOf="@+id/imageViewSubtracao"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:textColor="#fff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Multiplicação"
+        android:id="@+id/textViewMultiplicacao"
+        android:textSize="30sp"
+        android:layout_alignTop="@+id/imageViewMultiplicacao"
+        android:layout_alignLeft="@+id/textViewSubtracao"
+        android:layout_alignStart="@+id/textViewSubtracao"
+        android:layout_marginTop="21dp"
+        android:textColor="#fff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Divisão"
+        android:id="@+id/textViewDivisao"
+        android:textSize="30sp"
+        android:layout_marginBottom="24dp"
+        android:layout_alignBottom="@+id/imageViewDivisao"
+        android:layout_alignLeft="@+id/textViewMultiplicacao"
+        android:layout_alignStart="@+id/textViewMultiplicacao"
+        android:textColor="#fff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Selecione uma operação:"
+        android:id="@+id/textViewSelecioneOperacao"
+        android:textSize="24sp"
+        android:paddingStart="26sp"
+        android:background="#6a1b9a"
+        android:textColor="#fff"
+        android:padding="10sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:paddingEnd="26sp" />
+
 </RelativeLayout>
