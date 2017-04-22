@@ -6,13 +6,12 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
 
-public class Soma extends AppCompatActivity {
+public class Multiplicacao extends AppCompatActivity {
 
     private int fase = 0;
     private int limite = 10;
@@ -23,19 +22,19 @@ public class Soma extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_soma);
+        setContentView(R.layout.activity_multiplicacao);
         avancarFase();
 
-        EditText resultado = (EditText) findViewById(R.id.editTextResultadoSoma);
+        EditText resultado = (EditText) findViewById(R.id.editTextResultadoMultiplicacao);
         resultado.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) && (i == KeyEvent.KEYCODE_ENTER)) {
-                    TextView valor1TV = (TextView) findViewById(R.id.textViewValor1Soma);
+                    TextView valor1TV = (TextView) findViewById(R.id.textViewValor1Multiplicacao);
                     int valor1 = Integer.parseInt(valor1TV.getText().toString());
-                    TextView valor2TV = (TextView) findViewById(R.id.textViewValor2Soma);
+                    TextView valor2TV = (TextView) findViewById(R.id.textViewValor2Multiplicacao);
                     int valor2 = Integer.parseInt(valor2TV.getText().toString());
-                    TextView resultadoTV = (TextView) findViewById(R.id.editTextResultadoSoma);
+                    TextView resultadoTV = (TextView) findViewById(R.id.editTextResultadoMultiplicacao);
                     ImageView acertoErro = (ImageView) findViewById(R.id.imageViewAcertoErro);
 
                     if (resultadoTV.getText().toString().length() == 0) {
@@ -43,7 +42,7 @@ public class Soma extends AppCompatActivity {
                     } else {
                         int resultado = Integer.parseInt(resultadoTV.getText().toString());
 
-                        if ((valor1 + valor2) == resultado) {
+                        if ((valor1 * valor2) == resultado) {
                             mostrarMensagemSimples("Você acertou! Parabéns!");
                             acertoErro.getLayoutParams().height *= 1.10;
                             acertoErro.getLayoutParams().width *= 1.10;
@@ -70,7 +69,7 @@ public class Soma extends AppCompatActivity {
     private void avancarFase() {
         fase++;
         if ((fase != 1) && ((fase % 2) == 0)) {
-            limite *= 5;
+            limite *= 2;
         }
         TextView tituloFase = (TextView) findViewById(R.id.textViewTituloFase);
         tituloFase.setText("Fase " + String.valueOf(fase));
@@ -82,13 +81,13 @@ public class Soma extends AppCompatActivity {
         int valor1 = gerador.nextInt(limite);
         int valor2 = gerador.nextInt(limite);
 
-        TextView txtValor1 = (TextView) findViewById(R.id.textViewValor1Soma);
-        TextView txtValor2 = (TextView) findViewById(R.id.textViewValor2Soma);
+        TextView txtValor1 = (TextView) findViewById(R.id.textViewValor1Multiplicacao);
+        TextView txtValor2 = (TextView) findViewById(R.id.textViewValor2Multiplicacao);
 
         txtValor1.setText(String.valueOf(valor1));
         txtValor2.setText(String.valueOf(valor2));
 
-        TextView resultado = (TextView) findViewById(R.id.editTextResultadoSoma);
+        TextView resultado = (TextView) findViewById(R.id.editTextResultadoMultiplicacao);
         resultado.setText("");
     }
 

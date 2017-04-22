@@ -11,6 +11,9 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private ImageView imgSoma;
+    private ImageView imgSubtracao;
+    private ImageView imgMultiplicacao;
+    private ImageView imgDivisao;
     private TextView textoSoma;
     private TextView textoSubtracao;
     private TextView textoMultiplicacao;
@@ -21,28 +24,79 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        imgSoma = (ImageView) findViewById(R.id.imageViewSoma);
+        Typeface fonteSegoe = Typeface.createFromAsset(getAssets(), "fonts/segoeprb.ttf");
 
+        imgSoma = (ImageView) findViewById(R.id.imageViewSoma);
         imgSoma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Soma.class);
-                startActivity(intent);
+                startActivity(new Intent(getApplicationContext(), Soma.class));
             }
         });
 
         textoSoma = (TextView) findViewById(R.id.textViewSoma);
-        Typeface mtypeFace = Typeface.createFromAsset(getAssets(), "fonts/segoeprb.ttf");
-        textoSoma.setTypeface(mtypeFace);
+        textoSoma.setTypeface(fonteSegoe);
 
+        textoSoma.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Soma.class));
+            }
+        });
+
+        imgSubtracao = (ImageView) findViewById(R.id.imageViewSubtracao);
+        imgSubtracao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Subtracao.class));
+            }
+        });
+                
         textoSubtracao = (TextView) findViewById(R.id.textViewSubtracao);
-        textoSubtracao.setTypeface(mtypeFace);
+        textoSubtracao.setTypeface(fonteSegoe);
+
+        textoSubtracao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Subtracao.class));
+            }
+        });
+
+        imgMultiplicacao = (ImageView) findViewById(R.id.imageViewMultiplicacao);
+        imgMultiplicacao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Multiplicacao.class));
+            }
+        });
 
         textoMultiplicacao = (TextView) findViewById(R.id.textViewMultiplicacao);
-        textoMultiplicacao.setTypeface(mtypeFace);
+        textoMultiplicacao.setTypeface(fonteSegoe);
+
+        textoMultiplicacao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Multiplicacao.class));
+            }
+        });
+
+        imgDivisao = (ImageView) findViewById(R.id.imageViewDivisao);
+        imgDivisao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Divisao.class));
+            }
+        });
 
         textoDivisao = (TextView) findViewById(R.id.textViewDivisao);
-        textoDivisao.setTypeface(mtypeFace);
+        textoDivisao.setTypeface(fonteSegoe);
+
+        textoDivisao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Divisao.class));
+            }
+        });
 
     }
 }
