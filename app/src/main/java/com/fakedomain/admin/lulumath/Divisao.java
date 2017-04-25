@@ -15,6 +15,7 @@ public class Divisao extends AppCompatActivity {
 
     private int fase = 0;
     private int limite = 10;
+    private int chance = 1;
     private TextView tituloFase;
     private EditText resultado;
     private ImageView acertoErro;
@@ -43,19 +44,26 @@ public class Divisao extends AppCompatActivity {
                         int resultado = Integer.parseInt(resultadoTV.getText().toString());
 
                         if ((valor1 / valor2) == resultado) {
-                            mostrarMensagemSimples("Você acertou! Parabéns!");
+                            mostrarMensagemSimples("Você acertou e passou para a fase " + String.valueOf(fase + 1) + "! Parabéns!");
                             acertoErro.getLayoutParams().height *= 1.10;
                             acertoErro.getLayoutParams().width *= 1.10;
 
                             avancarFase();
                         } else {
-                            mostrarMensagemSimples("Você errou. Voltando à fase #1.");
-                            android.view.ViewGroup.LayoutParams layoutParams = acertoErro.getLayoutParams();
-                            layoutParams.width = 80;
-                            layoutParams.height = 100;
-                            acertoErro.setLayoutParams(layoutParams);
+                            if (chance < 3) {
+                                chance++;
+                                mostrarMensagemSimples("Tente novamente: a resposta certa era " + String.valueOf(valor1 / valor2) + ".");
+                                resultadoTV.setText("");
+                                sortearNumeros();
+                            } else {
+                                mostrarMensagemSimples("Que pena, você errou. A resposta certa era " + String.valueOf(valor1 / valor2) + ". Voltando à fase 1.");
+                                android.view.ViewGroup.LayoutParams layoutParams = acertoErro.getLayoutParams();
+                                layoutParams.width = 100;
+                                layoutParams.height = 120;
+                                acertoErro.setLayoutParams(layoutParams);
 
-                            reiniciar();
+                                reiniciar();
+                            }
                         }
                     }
                     return true;
@@ -84,7 +92,7 @@ public class Divisao extends AppCompatActivity {
 
         do {
             valor1 = gerador.nextInt(limite);
-            valor2 = gerador.nextInt(limite);
+            valor2 = gerador.nextInt(limite) + 1;
 
         } while ((valor1 % valor2) != 0);
 
@@ -99,7 +107,7 @@ public class Divisao extends AppCompatActivity {
     }
 
     private void mostrarMensagemSimples(String mensagem) {
-        Toast.makeText(getApplicationContext(), mensagem, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), mensagem, Toast.LENGTH_LONG).show();
     }
 
     private void reiniciar() {

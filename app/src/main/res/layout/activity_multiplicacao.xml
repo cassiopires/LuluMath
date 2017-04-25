@@ -41,10 +41,10 @@
         android:textSize="@dimen/tamanho_valor"
         android:textColor="#fff"
         android:textAlignment="viewEnd"
-        android:width="100dp"
+        android:width="200dp"
         android:layout_below="@+id/textViewTituloFase"
-        android:layout_alignLeft="@+id/textViewValor2Multiplicacao"
-        android:layout_alignStart="@+id/textViewValor2Multiplicacao" />
+        android:layout_alignRight="@+id/textViewSinalMultiplicacao"
+        android:layout_alignEnd="@+id/textViewSinalMultiplicacao" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -67,7 +67,7 @@
         android:textSize="@dimen/tamanho_valor"
         android:textColor="#fff"
         android:textAlignment="viewEnd"
-        android:width="100dp"
+        android:width="200dp"
         android:layout_below="@+id/textViewSinalMultiplicacao"
         android:layout_alignRight="@+id/view"
         android:layout_alignEnd="@+id/view" />

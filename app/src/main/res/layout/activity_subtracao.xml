@@ -41,7 +41,7 @@
         android:textSize="@dimen/tamanho_valor"
         android:textColor="#fff"
         android:textAlignment="viewEnd"
-        android:width="100dp"
+        android:width="200dp"
         android:layout_below="@+id/textViewTituloFase"
         android:layout_alignLeft="@+id/textViewValor2Subtracao"
         android:layout_alignStart="@+id/textViewValor2Subtracao" />
@@ -67,7 +67,7 @@
         android:textSize="@dimen/tamanho_valor"
         android:textColor="#fff"
         android:textAlignment="viewEnd"
-        android:width="100dp"
+        android:width="200dp"
         android:layout_below="@+id/textViewSinalSubtracao"
         android:layout_alignRight="@+id/view"
         android:layout_alignEnd="@+id/view" />
