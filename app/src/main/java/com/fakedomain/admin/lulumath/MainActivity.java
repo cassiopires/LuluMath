@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textoSubtracao;
     private TextView textoMultiplicacao;
     private TextView textoDivisao;
+    private TextView sobre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         imgSoma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Soma.class));
+                abrirAtividadeSoma();
             }
         });
 
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         textoSoma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Soma.class));
+                abrirAtividadeSoma();
             }
         });
 
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         imgSubtracao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Subtracao.class));
+                abrirAtividadeSubtracao();
             }
         });
                 
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         textoSubtracao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Subtracao.class));
+                abrirAtividadeSubtracao();
             }
         });
 
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         imgMultiplicacao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Multiplicacao.class));
+                abrirAtividadeMultiplicacao();
             }
         });
 
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         textoMultiplicacao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Multiplicacao.class));
+                abrirAtividadeMultiplicacao();
             }
         });
 
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         imgDivisao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Divisao.class));
+                abrirAtividadeDivisao();
             }
         });
 
@@ -94,9 +95,41 @@ public class MainActivity extends AppCompatActivity {
         textoDivisao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Divisao.class));
+                abrirAtividadeDivisao();
             }
         });
 
+        TextView sobre = (TextView) findViewById(R.id.textViewSobre);
+        sobre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Sobre.class));
+            }
+        });
+
+    }
+
+    private void abrirAtividadeSoma() {
+        Intent intent = new Intent(getApplicationContext(), Operacao.class);
+        intent.putExtra("operacao", "soma");
+        startActivity(intent);
+    }
+
+    private void abrirAtividadeSubtracao() {
+        Intent intent = new Intent(getApplicationContext(), Operacao.class);
+        intent.putExtra("operacao", "subtracao");
+        startActivity(intent);
+    }
+
+    private void abrirAtividadeMultiplicacao() {
+        Intent intent = new Intent(getApplicationContext(), Operacao.class);
+        intent.putExtra("operacao", "multiplicacao");
+        startActivity(intent);
+    }
+
+    private void abrirAtividadeDivisao() {
+        Intent intent = new Intent(getApplicationContext(), Operacao.class);
+        intent.putExtra("operacao", "divisao");
+        startActivity(intent);
     }
 }
