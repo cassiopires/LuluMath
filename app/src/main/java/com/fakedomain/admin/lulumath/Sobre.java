@@ -19,17 +19,19 @@ public class Sobre extends AppCompatActivity {
         int recordeDivisao = preferencias.getInt("divisao", 0);
 
         TextView textoSobre = (TextView) findViewById(R.id.textViewTextoSobre);
-        textoSobre.setText("O aplicativo LuluMath foi escrito para ajudar uma estudante do 4° ano do Ensino " +
+        textoSobre.setText("O aplicativo LuluMath foi desenvolvido para ajudar uma estudante do 4° ano do Ensino " +
                 "Fundamental a ter mais facilidade nos exercícios escolares de matemática: como outros estudantes " +
                 "podem ter a mesma necessidade, o aplicativo está sendo compartilhado gratuitamente.\n\nO objetivo do " +
-                "jogo é simples: fazer com que o troféu, que aumenta de tamanho a cada acerto, cubra toda a tela.\n\n" +
+                "jogo é simples: fazer com que o troféu, que aumenta de tamanho a cada acerto, cubra toda a tela - " +
+                "mas também a cada acerto as contas ficam mais difíceis.\n\n" +
                 "Regras:\n\n1. Somente números inteiros são sorteados;\n2. O resultado nunca será negativo;\n3. O " +
-                "resultado nunca terá casas decimais;\n4. Em cada sessão de jogo, o usuário terá 3 chances de acertar " +
+                "resultado nunca terá casas decimais;\n4. Em cada sessão de jogo em uma operação, o usuário terá 3 chances de acertar " +
                 "o resultado;\n5. Os exercícios podem e devem ser executados com o auxílio de papel e caneta, mas " +
                 "nunca de uma calculadora;\n6. Além de sozinho, é possível jogar entre várias pessoas, cada um " +
                 "resolvendo um problema, e ver quem não consegue resolver na sua vez;\n7. Todas as vezes em que o " +
-                "recorde da operação no dispositivo for superado, uma mensagem será mostrada.\n\nSugestões e problemas " +
-                "podem ser encaminhados ao e-mail lulumath.app@gmail.com.\n\nBom jogo!\n\n" +
+                "recorde da operação no dispositivo for superado, uma mensagem será mostrada;\n\n" +
+                "8. Os recordes de todas as operações no dispositivo são mostrados na área \"Sobre o LuluMath\".\n\n" +
+                "Sugestões e problemas podem ser encaminhados ao e-mail lulumath.app@gmail.com.\n\nBom jogo!\n\n" +
                 "***** Recordes do dispositivo ******\n" +
                 "Soma: fase " + String.valueOf(recordeSoma) + "\n" +
                 "Subração: fase " + String.valueOf(recordeSubtracao) + "\n" +
